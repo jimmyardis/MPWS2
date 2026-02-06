@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midlands Pressure Wash Services LLC | The Southeast's Premier Exterior Cleaning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- BRAND COLORS --- */
+        :root {
+            /* MIDLANDS BLUE (Primary) */
+            --brand-blue: #004a99; 
+            --brand-dark: #0f172a; 
+            /* SQUEEGEE PROS STYLE ACCENT (High Vis Yellow) */
+            --brand-yellow: #fde047; 
+        }
+        
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-heading { font-family: 'Montserrat', sans-serif; }
+
+        /* UTILITIES */
+        .text-brand-blue { color: var(--brand-blue); }
+        .bg-brand-blue { background-color: var(--brand-blue); }
+        .bg-brand-yellow { background-color: var(--brand-yellow); }
+        .text-brand-dark { color: var(--brand-dark); }
+
+        /* WAVE DIVIDER (The "Squeegee Pros" Look) */
+        .wave-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+        .wave-bottom svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60px;
+        }
+        .wave-bottom .shape-fill { fill: #FFFFFF; }
+
+        .wave-top {
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .wave-top svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60px;
+        }
+        .wave-top .shape-fill { fill: #FFFFFF; }
+
+        /* PROCESS STEPS */
+        .step-card {
+            transition: transform 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* FAQ ACCORDION */
+        .accordion-content {
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 200px;
+            padding-bottom: 1rem;
+        }
+        .accordion-item.active .fa-chevron-right {
+            transform: rotate(90deg);
+        }
+
+        /* LIQUID BUTTONS */
+        .btn-liquid {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .btn-liquid:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800 antialiased overflow-x-hidden">
+
+    <div class="bg-brand-dark text-white py-2 text-sm">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <div class="flex gap-4">
+                <span><i class="fas fa-map-marker-alt text-brand-yellow mr-1"></i> Serving the Southeast</span>
+                <span class="hidden md:inline"><i class="fas fa-clock text-brand-yellow mr-1"></i> 24/7 Fleet Services</span>
+            </div>
+            <div class="flex gap-4 font-bold">
+                <a href="tel:803-834-0367" class="hover:text-brand-yellow transition"><i class="fas fa-phone-alt mr-2"></i> (803) 834-0367</a>
+                <a href="#" class="bg-brand-blue px-3 rounded hover:bg-blue-600 transition">Pay Invoice</a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-24">
+                <div class="hidden lg:flex items-center space-x-6 font-heading font-bold text-sm uppercase text-slate-700">
+                    <a href="#residential" class="hover:text-brand-blue transition">Residential</a>
+                    <a href="#commercial" class="hover:text-brand-blue transition">Commercial</a>
+                    <a href="#fleet" class="hover:text-brand-blue transition">Fleet</a>
+                    <a href="#process" class="hover:text-brand-blue transition">Our Process</a>
+                    <a href="#reviews" class="hover:text-brand-blue transition">Reviews</a>
+                </div>
+                
+                <a href="#" class="flex items-center gap-2 group" onclick="window.scrollTo(0,0)">
+                    <img src="logo.png" alt="Midlands PWS" class="h-20 w-auto object-contain" 
+                         onerror="this.style.display='none'; document.getElementById('text-logo').classList.remove('hidden');">
+                    <div id="text-logo" class="hidden font-heading font-black text-2xl leading-none text-brand-blue uppercase text-right">
+                        Midlands<br><span class="text-slate-800">Pressure Wash</span>
+                    </div>
+                </a>
+                
+                <button class="lg:hidden text-2xl text-brand-blue"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative bg-brand-dark h-[600px] flex items-center justify-center text-center px-4 overflow-hidden">
+        <div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1618090563013-1896275c4557?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center"></div>
+        
+        <div class="relative z-10 max-w-4xl">
+            <h1 class="text-4xl md:text-6xl font-heading font-black text-white mb-6 uppercase drop-shadow-lg">
+                Your Property's Best<br><span class="text-brand-yellow">First Impression</span>
+            </h1>
+            <p class="text-xl text-white mb-8 font-medium drop-shadow-md">
+                Residential • Commercial • Fleet • Systemized Cleaning
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="btn-liquid bg-brand-yellow text-brand-dark font-heading font-black py-4 px-10 rounded shadow-xl text-lg uppercase tracking-wide hover:bg-yellow-300">
+                    Get A Free Quote
+                </a>
+                <a href="tel:803-834-0367" class="btn-liquid bg-white text-brand-blue font-heading font-bold py-4 px-10 rounded shadow-xl text-lg flex items-center justify-center hover:bg-gray-100">
+                    <i class="fas fa-phone mr-2"></i> (803) 834-0367
+                </a>
+            </div>
+        </div>
+        
+        <div class="wave-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </header>
+
+    <section class="bg-brand-yellow py-12 relative overflow-visible">
+        <div class="absolute -top-10 left-0 w-full h-10 bg-brand-yellow" style="clip-path: ellipse(50% 100% at 50% 100%);"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between relative z-10">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h2 class="text-3xl md:text-5xl font-heading font-black text-brand-blue uppercase leading-tight mb-4">
+                    Don't Let a Dirty Exterior Ruin<br>
+                    <span class="text-slate-800">Your Curb Appeal!</span>
+                </h2>
+                <a href="#contact" class="inline-block bg-white text-brand-blue font-black py-4 px-8 rounded shadow-lg uppercase tracking-wider hover:bg-slate-100 transition transform hover:scale-105">
+                    Request Your Free Quote Today!
+                </a>
+            </div>
+            <div class="md:w-1/2 flex justify-center md:justify-end">
+                <img src="https://images.unsplash.com/photo-1520111168581-30d887a04944?q=80&w=800&auto=format&fit=crop" class="rounded-full border-8 border-white shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover" alt="Cleaning Worker">
+            </div>
+        </div>
+
+        <div class="absolute -bottom-10 left-0 w-full h-10 bg-brand-yellow" style="clip-path: ellipse(50% 100% at 50% 0%);"></div>
+    </section>
+
+    <section id="process" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-black text-brand-blue uppercase">Our Process Makes Things Easy!</h2>
+                <p class="text-slate-500 mt-2">Systemized execution for consistent results.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="step-card bg-brand-blue text-white rounded-xl overflow-hidden shadow-lg relative h-64 border-b-8 border-brand-dark">
+                    <div class="bg-brand-yellow text-brand-dark font-black text-center py-2 uppercase tracking-wide w-1/2 mx-auto clip-path-polygon">Step 1</div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-4">Request Estimate</h3>
+                        <i class="fas fa-calculator text-5xl text-brand-yellow mb-4"></i>
+                        <p class="text-sm opacity-90">Fill out our online form or call us. We'll respond with a detailed quote within 24 hours.</p>
+                    </div>
+                </div>
+
+                <div class="step-card bg-sky-400 text-white rounded-xl overflow-hidden shadow-lg relative h-64 border-b-8 border-sky-600">
+                    <div class="bg-brand-yellow text-brand-dark font-black text-center py-2 uppercase tracking-wide w-1/2 mx-auto">Step 2</div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-4">Schedule It</h3>
+                        <i class="fas fa-calendar-check text-5xl text-white mb-4"></i>
+                        <p class="text-sm opacity-90">Choose a time that works for you. We offer weekend and after-hours slots.</p>
+                    </div>
+                </div>
+
+                <div class="step-card bg-brand-blue text-white rounded-xl overflow-hidden shadow-lg relative h-64 border-b-8 border-brand-dark">
+                    <div class="bg-brand-yellow text-brand-dark font-black text-center py-2 uppercase tracking-wide w-1/2 mx-auto">Step 3</div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-4">Preparation</h3>
+                        <i class="fas fa-dolly text-5xl text-brand-yellow mb-4"></i>
+                        <p class="text-sm opacity-90">We send reminders 24h before. Just ensure clear access to the work area.</p>
+                    </div>
+                </div>
+
+                <div class="step-card bg-brand-dark text-white rounded-xl overflow-hidden shadow-lg relative h-64 border-b-8 border-black">
+                    <div class="bg-brand-yellow text-brand-dark font-black text-center py-2 uppercase tracking-wide w-1/2 mx-auto">Step 4</div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-4">Execution</h3>
+                        <i class="fas fa-spray-can text-5xl text-brand-yellow mb-4"></i>
+                        <p class="text-sm opacity-90">Our crew arrives on time, fully equipped to perform Soft Washing or Pressure Cleaning.</p>
+                    </div>
+                </div>
+
+                <div class="step-card bg-brand-blue text-white rounded-xl overflow-hidden shadow-lg relative h-64 border-b-8 border-brand-dark">
+                    <div class="bg-brand-yellow text-brand-dark font-black text-center py-2 uppercase tracking-wide w-1/2 mx-auto">Step 5</div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-4">Quality Check</h3>
+                        <i class="fas fa-check-circle text-5xl text-brand-yellow mb-4"></i>
+                        <p class="text-sm opacity-90">We perform a final walkthrough to ensure 100% satisfaction before leaving.</p>
+                    </div>
+                </div>
+
+                <div class="step-card bg-sky-400 text-white rounded-xl overflow-hidden shadow-lg relative h-64 border-b-8 border-sky-600">
+                    <div class="bg-brand-yellow text-brand-dark font-black text-center py-2 uppercase tracking-wide w-1/2 mx-auto">Step 6</div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-4">Maintenance</h3>
+                        <i class="fas fa-clipboard-list text-5xl text-white mb-4"></i>
+                        <p class="text-sm opacity-90">Join our recurring plan to keep your property pristine year-round.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-brand-dark py-12 overflow-hidden relative">
+        <div class="text-center mb-8 relative z-10">
+            <h2 class="text-4xl font-heading font-black text-white uppercase">Our Work Speaks For Itself</h2>
+        </div>
+        
+        <div class="flex overflow-x-auto gap-4 pb-8 px-4 snap-x">
+            <div class="min-w-[300px] md:min-w-[400px] snap-center rounded-xl overflow-hidden border-4 border-white shadow-xl">
+                <img src="https://images.unsplash.com/photo-1621252179027-94459d27d3ee?q=80&w=1000&auto=format&fit=crop" class="w-full h-64 object-cover">
+                <div class="bg-white p-3 font-bold text-center text-brand-blue uppercase">Concrete Cleaning</div>
+            </div>
+            <div class="min-w-[300px] md:min-w-[400px] snap-center rounded-xl overflow-hidden border-4 border-brand-yellow shadow-xl transform scale-105">
+                <img src="https://images.unsplash.com/photo-1595846519845-68e298c2edd8?q=80&w=1000&auto=format&fit=crop" class="w-full h-64 object-cover">
+                <div class="bg-brand-yellow p-3 font-bold text-center text-brand-dark uppercase">House Soft Washing</div>
+            </div>
+            <div class="min-w-[300px] md:min-w-[400px] snap-center rounded-xl overflow-hidden border-4 border-white shadow-xl">
+                <img src="https://images.unsplash.com/photo-1605218427306-635ba74229b3?q=80&w=1000&auto=format&fit=crop" class="w-full h-64 object-cover">
+                <div class="bg-white p-3 font-bold text-center text-brand-blue uppercase">Commercial Fleet</div>
+            </div>
+        </div>
+
+        <div class="text-center mt-8">
+             <a href="#contact" class="btn-liquid bg-brand-yellow text-brand-dark font-black py-3 px-8 rounded shadow-lg uppercase tracking-wider">
+                Get Your Results Today
+            </a>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-24 bg-sky-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-heading font-black text-brand-blue uppercase mb-2">Trusted By The Southeast</h2>
+            <h3 class="text-xl text-sky-400 font-bold mb-12">Homeowners and Businesses</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">S</div>
+                        <div>
+                            <div class="font-bold">Shelly Garrett</div>
+                            <div class="text-xs text-gray-400">3 months ago</div>
+                        </div>
+                        <i class="fab fa-google text-blue-500 ml-auto"></i>
+                    </div>
+                    <div class="text-brand-yellow text-sm mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic">"GREAT WORK! GREAT TEAM! SEE YOU IN JUNE 2026. The crew was professional and my house looks brand new."</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">J</div>
+                        <div>
+                            <div class="font-bold">Jim Homan</div>
+                            <div class="text-xs text-gray-400">1 month ago</div>
+                        </div>
+                        <i class="fab fa-google text-blue-500 ml-auto"></i>
+                    </div>
+                    <div class="text-brand-yellow text-sm mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic">"Your crew was fantastic, very professional and efficient. We hope to see them again in the future."</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">T</div>
+                        <div>
+                            <div class="font-bold">Tonya Brown</div>
+                            <div class="text-xs text-gray-400">2 months ago</div>
+                        </div>
+                        <i class="fab fa-google text-blue-500 ml-auto"></i>
+                    </div>
+                    <div class="text-brand-yellow text-sm mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic">"Nice workers, good job with what they did. Highly recommend Midlands Pressure Wash!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl font-heading font-black text-center text-brand-blue uppercase mb-12">Frequently Asked Questions</h2>
+            
+            <div class="space-y-4">
+                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 font-bold text-left text-slate-800" onclick="this.parentElement.classList.toggle('active')">
+                        Do I Need To Be Home for My Service?
+                        <i class="fas fa-chevron-right text-brand-blue transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-4 bg-white text-gray-600">
+                        <p class="pt-4">Not at all. We only need you home if we are cleaning interior windows or if you have specific pets that need to be secured. We will text you when we are on the way.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 font-bold text-left text-slate-800" onclick="this.parentElement.classList.toggle('active')">
+                        How Quickly Can I Get a Quote?
+                        <i class="fas fa-chevron-right text-brand-blue transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-4 bg-white text-gray-600">
+                        <p class="pt-4">You'll have a detailed quote within 24 hours of your request. For many standard homes, we can quote instantly over the phone.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 font-bold text-left text-slate-800" onclick="this.parentElement.classList.toggle('active')">
+                        Are Your Technicians Insured?
+                        <i class="fas fa-chevron-right text-brand-blue transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-4 bg-white text-gray-600">
+                        <p class="pt-4">Yes. We are fully licensed and carry comprehensive liability insurance for your peace of mind and protection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-heading font-black text-brand-blue uppercase mb-8">Our Service Area</h2>
+            
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex bg-white rounded-lg shadow p-1">
+                    <button class="px-6 py-2 bg-brand-blue text-white font-bold rounded">South Carolina Areas</button>
+                    <button class="px-6 py-2 text-gray-500 font-bold hover:bg-gray-100 rounded">Expansion Areas</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-left">
+                <div class="grid grid-cols-2 gap-y-4 gap-x-8">
+                    <div class="flex items-center"><i class="fas fa-map-marker-alt text-brand-yellow mr-2 text-xl"></i> <span class="font-bold text-lg">Columbia, SC</span></div>
+                    <div class="flex items-center"><i class="fas fa-map-marker-alt text-brand-blue mr-2 text-xl"></i> <span class="font-bold text-lg">Irmo, SC</span></div>
+                    <div class="flex items-center"><i class="fas fa-map-marker-alt text-brand-blue mr-2 text-xl"></i> <span class="font-bold text-lg">Lexington, SC</span></div>
+                    <div class="flex items-center"><i class="fas fa-map-marker-alt text-brand-blue mr-2 text-xl"></i> <span class="font-bold text-lg">Chapin, SC</span></div>
+                    <div class="flex items-center"><i class="fas fa-map-marker-alt text-brand-blue mr-2 text-xl"></i> <span class="font-bold text-lg">Blythewood, SC</span></div>
+                    <div class="flex items-center"><i class="fas fa-map-marker-alt text-brand-blue mr-2 text-xl"></i> <span class="font-bold text-lg">Cayce, SC</span></div>
+                    <div class="flex items-center"><i class="fas fa-map-marker-alt text-brand-blue mr-2 text-xl"></i> <span class="font-bold text-lg">West Columbia</span></div>
+                    <div class="flex items-center"><i class="fas fa-map-marker-alt text-brand-blue mr-2 text-xl"></i> <span class="font-bold text-lg">Forest Acres</span></div>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-lg transform rotate-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Map_of_South_Carolina_highlighting_Richland_County.svg/1200px-Map_of_South_Carolina_highlighting_Richland_County.svg.png" class="w-full h-64 object-contain opacity-80">
+                    <p class="text-center text-xs text-gray-400 mt-2">Interactive Map Loading...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-blue text-white py-16 border-t-8 border-brand-yellow" id="contact">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
+            
+            <div>
+                <img src="logo.png" class="h-16 mb-6 brightness-0 invert" alt="Midlands Logo" onerror="this.style.display='none'">
+                <h3 class="font-heading font-black text-2xl mb-4" id="footer-text-logo">MIDLANDS<br>PRESSURE WASH</h3>
+                
+                <div class="flex gap-4 mb-6">
+                   <div class="w-12 h-16 bg-white rounded-lg flex items-center justify-center">
+                       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_South_Carolina.svg/1200px-Flag_of_South_Carolina.svg.png" class="w-8">
+                   </div>
+                   <div class="flex flex-col justify-center">
+                       <span class="font-bold text-brand-yellow">LOCALLY OWNED</span>
+                       <span class="text-xs">And Operated</span>
+                   </div>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-heading font-black text-xl uppercase mb-6">Contact Us</h4>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-brand-yellow mt-1"></i>
+                        <span>10019 Broad River Road,<br>Irmo, SC 29063</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-brand-yellow"></i>
+                        <a href="tel:803-834-0367" class="font-bold text-xl">(803) 834-0367</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-brand-yellow"></i>
+                        <a href="mailto:Midlandspws@gmail.com">Midlandspws@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-heading font-black text-xl uppercase mb-6">Quick Links</h4>
+                <ul class="space-y-2 text-blue-200">
+                    <li><a href="#" class="hover:text-white">Home</a></li>
+                    <li><a href="#process" class="hover:text-white">Our Process</a></li>
+                    <li><a href="#reviews" class="hover:text-white">Reviews</a></li>
+                    <li><a href="#fleet" class="hover:text-white">Fleet Services</a></li>
+                    <li><a href="#contact" class="hover:text-white">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-heading font-black text-xl uppercase mb-6">Location</h4>
+                <div class="bg-white p-1 rounded">
+                    <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-500 text-xs">
+                        [ Google Map Embed ]
+                    </div>
+                    <div class="p-2 text-slate-800 text-xs font-bold">
+                        <i class="fas fa-map-pin text-red-500"></i> Midlands Pressure Wash
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-12 pt-8 border-t border-blue-500 text-sm opacity-75">
+            &copy; 2026 Midlands Pressure Wash Services LLC. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
